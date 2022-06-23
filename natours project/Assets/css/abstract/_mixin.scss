@@ -53,3 +53,10 @@ $breakpoint argument choices:
 /* call:
 go to css selector and follow this path 
 @include forRes(phone){css style;} */
+
+
+@mixin bg {
+    content: " ";
+    position: absolute;
+}
+
