@@ -1,0 +1,134 @@
+.card{
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    height: 55rem;
+    position: relative;
+    &__box{
+        width: 100%;
+        height: 55rem;
+        transition: all .8s ease;
+        box-shadow: 0 1rem 4rem rgba(black, .3);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden;
+        overflow: hidden;
+        border-radius: 3px;
+        &--font{
+            background-color: $white;
+        }
+
+        &--back{
+            transform: rotateY(180deg);
+            &-1{
+                background-image: linear-gradient(to right bottom , $lightOrange , $darkOrange);
+            }
+            &-2{
+                background-image: linear-gradient(to right bottom , $lightGreenColor, $darkGreenColor);
+            }
+            &-3{
+                background-image: linear-gradient(to right bottom , $lightBlue , $darkBlue);
+            }
+        }
+    }
+    &:hover &__box--font{
+        transform: rotateY(-180deg);
+    }
+    &:hover &__box--back{
+        transform: rotateY(0);
+    }
+    //font-side style
+    &__picture{
+        background-size: cover;
+        background-position: center;
+        height: 20rem;
+        background-blend-mode: screen;
+        border-top-left-radius: .5rem;
+        border-top-right-radius: .5rem;
+        clip-path: polygon(0 0 , 100% 0 , 100% 85% , 0 100%);
+        -webkit-clip-path: polygon(0 0 , 100% 0 , 100% 85% , 0 100%);
+        &--1{
+            background-image:linear-gradient(to right bottom , $lightOrange , $darkOrange), url(../../img/newFolder/nature4.jpg);
+
+        }
+        &--2{
+            background-image:linear-gradient(to right bottom , $lightGreenColor , $darkGreenColor), url(../../img/newFolder/nature2.jpg);
+        }
+        &--3{
+            background-image:linear-gradient(to right bottom , $lightBlue, $darkBlue), url(../../img/newFolder/nature1.jpg);
+        }
+    }
+    &__heading{
+        font-size: 2.8rem;
+        text-transform: uppercase;
+        color: $white;
+        position: absolute;
+        top: 12rem;
+        right: 2rem;
+        text-align: right;
+        font-weight: 300;
+        width: 70%;
+    }
+    &__heading--span{
+        padding: 1rem  1.5rem;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        &-1{
+            background-image: linear-gradient(to right bottom , 
+            rgba($lightOrange, .85) ,
+             rgba($darkOrange, .85));
+        }
+        &-2{
+            background-image: linear-gradient(to right bottom , 
+            rgba($lightGreenColor, .85) ,
+             rgba($darkGreenColor, .85));
+        }
+        &-3{
+            background-image: linear-gradient(to right bottom , 
+            rgba($lightBlue, .85) ,
+             rgba($darkBlue, .85));
+        }
+    }
+    &__details{
+        margin-top: 2rem;
+        padding: 3rem;
+        ul{
+            list-style: none;
+            width: 80%;
+            margin: 0 auto;
+            li{
+                text-align: center;
+                font-size: 2rem;
+                text-transform: capitalize;
+                padding: 1rem;
+                &:not(:last-child){
+                    border-bottom: 1px solid #ddd;
+                }
+            }
+        }
+    }
+    //backside styling
+    &__cta{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50% , -50%);
+    }
+    &__price--box{
+        text-align: center;
+        margin-bottom: 6rem;
+    }
+    &__price--only{
+        color: $white;
+        font-size: 2.5rem;
+        text-transform: capitalize;
+        margin-right: 10rem;
+    }
+
+    &__price--value{
+        font-size: 5.5rem;
+        font-weight: 100;
+        color: $white;
+    }
+}

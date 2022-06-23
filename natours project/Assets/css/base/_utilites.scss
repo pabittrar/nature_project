@@ -1,0 +1,23 @@
+$list: center, left, right, justify;
+
+@each $i in $list {
+    .text-#{$i}{
+        text-align: $i;
+    }
+}
+
+@for $i from 1 through 10 {
+    .pt-#{$i}{
+        padding-top: $i * 1rem;
+    }
+    .pb-#{$i}{
+        padding-bottom: $i * 1rem;
+    }
+    .mt-#{$i}{
+        margin-top: $i * 1rem;
+    }
+    .mb-#{$i}{
+        margin-bottom: $i * 1rem;
+    }
+
+}

@@ -1,0 +1,89 @@
+.btn{
+    &,
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        padding: 1rem 2.5rem;
+        font-size: 2rem;
+        border-radius: 10rem;
+        display: inline-block;
+        position: relative;
+        transition: all .3s;
+        animation: moveFromBottom .7s ease-out .5s;
+        animation-fill-mode: backwards;
+    }
+
+    border: none;
+    cursor: pointer;
+    
+    &:hover{
+        transform: translateY(-.3rem);
+        &::after{
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+    
+    &:active{
+        transform: translateY(-.1rem);
+    }
+    
+    &::after{
+        content: " ";
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        border-radius: 10rem;
+        z-index: -1;
+        transition: all .3s;
+    }
+}
+
+.btn-white{
+    background-color: $white;
+    color: $grayBlack;
+    &::after{
+        background-color: $white; 
+    } 
+   }
+
+.btn-green{
+    background-color: $darkGreenColor;
+    color: $grayBlack;
+    &::after{
+        background-color: $darkGreenColor;
+    } 
+}
+
+.btn-text{
+    &:link,
+    &:visited{
+        text-transform: capitalize;
+        font-size: 2rem;
+        display: inline-block;
+        color: $darkGreenColor;
+        border-bottom: .2rem solid $darkGreenColor;
+        transition: all .3s;
+        padding: .3rem;
+        margin-top: 3rem;
+    }
+    &:hover{
+        background-color: $lightGreenColor;
+        color: $white;
+        transform: translateY(-.2rem);
+        box-shadow: .1rem .3rem .2rem rgba($black, .5);
+    }
+    &:active{
+        transform: translateY(0);
+    }
+}
+
+.btn-form {
+	color: white;
+	margin-bottom: 1rem !important;
+	margin-top: 4rem;
+    font-size: 1.7rem;
+}

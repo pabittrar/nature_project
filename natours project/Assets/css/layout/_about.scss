@@ -1,0 +1,63 @@
+.heading-secondary {
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    display: inline-block;
+    background-image: linear-gradient(to right , $lightGreenColor ,$darkGreenColor);
+    color: transparent;
+    transition: all .3s;
+     -webkit-background-clip: text;
+     &:hover{
+         transform: skewY(2deg) skewX(15deg)  scale(1.1);
+         text-shadow: 5rem 1rem 2rem rgba($black , .2);
+     }
+}
+
+.heading-tertiary{
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.paragraph{
+    font-size: 2rem;
+    &:not(:last-child){
+        margin-bottom: 3rem;
+    }
+}
+
+/* img */
+.composition{
+    position: relative;
+    &__photo{
+        width: 55%;
+        box-shadow: 0 3rem 4rem rgba($black , .2);
+        border: .2rem solid rgba($black , .2);
+        position: absolute;
+        transition: all .3s;
+        outline-offset: 1rem;
+        z-index: 10;
+        &--p1{
+            left: 0;
+            top: -2rem;
+        }
+
+        &--p2{
+            right: 0;
+            top: 1rem;
+        }
+
+        &--p3{
+            left: 20%;
+            top: 10rem;
+        }
+        &:hover{
+            transform: scale(1.5)  translateY(-.5rem);
+            box-shadow: 0 4rem 6rem rgba($black , .5);
+            outline: 1.5rem solid $lightGreenColor;
+            z-index: 20;
+        }
+    }
+    &:hover &__photo:not(:hover){
+        transform: scale(.95);
+    }
+}
